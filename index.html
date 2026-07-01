@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xtreme Motors Exchange | Autos Usados de Calidad en Phoenix, AZ</title>
+<meta name="description" content="Josue Garibay — Tu Asesor Automotriz en Xtreme Motors Exchange, Phoenix, AZ. Autos seminuevos de calidad, financiamiento fácil y atención personal en español e inglés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0c;
+    --dark: #121216;
+    --card: #17171d;
+    --gold: #d4af37;
+    --gold-light: #e8c96a;
+    --gold-dark: #a8862a;
+    --text: #eaeaea;
+    --muted: #9a9aa2;
+    --whatsapp: #25d366;
+    --radius: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--black);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ============ LANGUAGE TOGGLE ============ */
+  body.es .en { display: none !important; }
+  body.en .es { display: none !important; }
+  .lang-switch {
+    display: flex;
+    border: 1px solid rgba(212,175,55,0.45);
+    border-radius: 999px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .lang-switch button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 7px 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .lang-switch button.active {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    color: #1a1503;
+  }
+
+  h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* ============ TOP BAR ============ */
+  .topbar {
+    background: var(--gold);
+    color: #1a1503;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 0;
+  }
+  .topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .topbar a { color: #1a1503; text-decoration: none; }
+  .topbar a:hover { text-decoration: underline; }
+
+  /* ============ NAV ============ */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 12, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    position: relative;
+  }
+  .nav-right { display: flex; align-items: center; gap: 16px; }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+  .brand img.logo-img {
+    height: 58px;
+    width: auto;
+    max-width: 60vw;
+    object-fit: contain;
+    display: block;
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .brand-text .name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: 0.06em;
+    background: linear-gradient(120deg, #f5dd8a, var(--gold) 45%, #8a6d1f 75%, #f0d475);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+  }
+  .brand-text .tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
+  .nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    color: #1a1503 !important;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { filter: brightness(1.1); }
+  .menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid rgba(212,175,55,0.4);
+    color: var(--gold);
+    font-size: 1.3rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    background:
+      linear-gradient(100deg, rgba(10,10,12,0.96) 30%, rgba(10,10,12,0.55) 70%, rgba(10,10,12,0.35)),
+      url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 140px;
+    background: linear-gradient(to bottom, transparent, var(--black));
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 640px; padding: 90px 0; }
+  .hero .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero .eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin-bottom: 22px;
+  }
+  .hero h1 .gold {
+    background: linear-gradient(120deg, #f5dd8a, var(--gold) 50%, #b08d2a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero p {
+    color: #c8c8cf;
+    font-size: 1.12rem;
+    margin-bottom: 34px;
+    max-width: 520px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.15s, filter 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    color: #1a1503;
+    box-shadow: 0 8px 28px rgba(212, 175, 55, 0.35);
+  }
+  .btn-outline {
+    border: 1.5px solid rgba(212, 175, 55, 0.6);
+    color: var(--gold-light);
+    background: rgba(212, 175, 55, 0.06);
+  }
+  .btn-whatsapp {
+    background: var(--whatsapp);
+    color: #06250f;
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.3);
+  }
+  .hero-badges {
+    display: flex;
+    gap: 28px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+  .hero-badge { display: flex; align-items: center; gap: 10px; color: #d5d5db; font-size: 0.92rem; font-weight: 500; }
+  .hero-badge svg { flex-shrink: 0; }
+
+  /* ============ SECTION BASICS ============ */
+  section { padding: 90px 0; }
+  .section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+  .kicker {
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 14px;
+  }
+  .section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); font-weight: 700; margin-bottom: 14px; }
+  .section-head p { color: var(--muted); font-size: 1.05rem; }
+
+  /* ============ TRUST STRIP ============ */
+  .trust {
+    padding: 0;
+    margin-top: -40px;
+    position: relative;
+    z-index: 3;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(212,175,55,0.25);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+  .trust-item {
+    background: var(--dark);
+    padding: 30px 20px;
+    text-align: center;
+  }
+  .trust-item .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--gold-light);
+  }
+  .trust-item .lbl { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+
+  /* ============ ABOUT ME ============ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .about-photo img {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid rgba(212,175,55,0.35);
+    display: block;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+  .about-avatar {
+    display: none;
+    aspect-ratio: 1;
+    border-radius: var(--radius);
+    background: linear-gradient(145deg, #1d1d24, #0e0e12);
+    border: 1px solid rgba(212,175,55,0.35);
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    font-weight: 800;
+    color: var(--gold);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+  .about-text h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 18px; }
+  .about-text p { color: #c8c8cf; margin-bottom: 18px; }
+  .about-points { list-style: none; margin: 8px 0 30px; }
+  .about-points li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    font-weight: 500;
+  }
+  @media (max-width: 960px) {
+    .about-grid { grid-template-columns: 1fr; gap: 34px; }
+    .about-photo { max-width: 340px; margin: 0 auto; width: 100%; }
+  }
+
+  /* ============ INVENTORY ============ */
+  .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .car-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  }
+  .car-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212,175,55,0.5);
+    box-shadow: 0 18px 44px rgba(0,0,0,0.55);
+  }
+  .car-img { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+  .car-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
+  .car-card:hover .car-img img { transform: scale(1.06); }
+  .car-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(10,10,12,0.85);
+    border: 1px solid rgba(212,175,55,0.5);
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+  .car-body { padding: 22px; }
+  .car-body h3 { font-size: 1.18rem; margin-bottom: 6px; }
+  .car-specs {
+    display: flex;
+    gap: 14px;
+    color: var(--muted);
+    font-size: 0.84rem;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .car-footer { display: flex; justify-content: space-between; align-items: center; }
+  .car-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--gold-light);
+  }
+  .car-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(212,175,55,0.5);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .car-link:hover { color: var(--gold-light); }
+  .inventory-cta { text-align: center; margin-top: 48px; }
+  .inventory-cta .note { color: var(--muted); font-size: 0.85rem; margin-top: 14px; }
+
+  /* ============ WHY US ============ */
+  .why { background: var(--dark); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .why-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 34px 28px;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .why-card:hover { border-color: rgba(212,175,55,0.45); transform: translateY(-4px); }
+  .why-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(212,175,55,0.05));
+    border: 1px solid rgba(212,175,55,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .why-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+  .why-card p { color: var(--muted); font-size: 0.94rem; }
+
+  /* ============ FINANCING ============ */
+  .financing {
+    background:
+      linear-gradient(90deg, rgba(10,10,12,0.95) 40%, rgba(10,10,12,0.6)),
+      url('https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+  }
+  .financing-inner { max-width: 560px; }
+  .financing h2 { font-size: clamp(1.9rem, 3.4vw, 2.5rem); margin-bottom: 18px; }
+  .financing p { color: #c8c8cf; margin-bottom: 26px; }
+  .finance-list { list-style: none; margin-bottom: 34px; }
+  .finance-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    font-weight: 500;
+  }
+
+  /* ============ TESTIMONIALS ============ */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .testi-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 30px;
+  }
+  .stars { color: var(--gold); letter-spacing: 3px; margin-bottom: 14px; font-size: 0.95rem; }
+  .testi-card p { color: #cfcfd6; font-size: 0.95rem; font-style: italic; margin-bottom: 18px; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    color: #1a1503;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.95rem;
+  }
+  .testi-author .who strong { display: block; font-size: 0.92rem; }
+  .testi-author .who span { color: var(--muted); font-size: 0.8rem; }
+
+  /* ============ CONTACT ============ */
+  .contact { background: var(--dark); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 50px;
+    align-items: start;
+  }
+  .contact-info h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 16px; }
+  .contact-info > p { color: var(--muted); margin-bottom: 30px; }
+  .contact-methods { display: flex; flex-direction: column; gap: 16px; margin-bottom: 34px; }
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .contact-method:hover { border-color: rgba(212,175,55,0.5); transform: translateX(4px); }
+  .contact-method .cm-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(212,175,55,0.05));
+    border: 1px solid rgba(212,175,55,0.35);
+  }
+  .contact-method .cm-icon.wa { background: rgba(37,211,102,0.12); border-color: rgba(37,211,102,0.4); }
+  .contact-method strong { display: block; font-size: 0.95rem; }
+  .contact-method span { color: var(--muted); font-size: 0.84rem; }
+  .hours { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 22px 24px; }
+  .hours h3 { font-size: 1rem; color: var(--gold-light); margin-bottom: 12px; }
+  .hours table { width: 100%; font-size: 0.88rem; border-collapse: collapse; }
+  .hours td { padding: 5px 0; color: #cfcfd6; }
+  .hours td:last-child { text-align: right; color: var(--muted); }
+
+  .contact-form {
+    background: var(--card);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: var(--radius);
+    padding: 38px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+  .contact-form h3 { font-size: 1.4rem; margin-bottom: 8px; }
+  .contact-form > p { color: var(--muted); font-size: 0.92rem; margin-bottom: 26px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 7px;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 13px 15px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .field textarea { resize: vertical; min-height: 100px; }
+  .form-submit { width: 100%; justify-content: center; margin-top: 8px; }
+  .form-note { text-align: center; color: var(--muted); font-size: 0.78rem; margin-top: 14px; }
+
+  /* ============ MAP ============ */
+  .map-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(212,175,55,0.25); margin-top: 60px; }
+  .map-wrap iframe { display: block; width: 100%; height: 380px; border: 0; filter: grayscale(0.3) contrast(1.05); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid rgba(212,175,55,0.2);
+    padding: 50px 0 30px;
+    background: var(--black);
+  }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  .footer-brand p { color: var(--muted); font-size: 0.88rem; max-width: 320px; margin-top: 12px; }
+  .footer-col h4 {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 9px; }
+  .footer-col a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  /* ============ FLOATING WHATSAPP ============ */
+  .wa-float {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    z-index: 200;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: var(--whatsapp);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
+    transition: transform 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.1); }
+
+  /* ============ REVEAL ANIMATION ============ */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 960px) {
+    .inventory-grid, .why-grid, .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: rgba(10,10,12,0.98);
+      padding: 20px 24px 26px;
+      gap: 18px;
+      border-bottom: 1px solid rgba(212,175,55,0.25);
+    }
+    .nav-links.open { display: flex; }
+    .menu-btn { display: block; }
+    .topbar .container { justify-content: center; text-align: center; }
+    .inventory-grid, .why-grid, .testi-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form { padding: 26px; }
+    section { padding: 64px 0; }
+  }
+</style>
+</head>
+<body class="es">
+
+<!-- ══════════ TOP BAR ══════════ -->
+<div class="topbar">
+  <div class="container">
+    <span>📍 1734 E. Van Buren St. • Phoenix, AZ 85006</span>
+    <span>
+      <span class="es">🇺🇸 English available</span><span class="en">🇲🇽 Se habla español</span>
+      &nbsp;|&nbsp; <a href="tel:+16028217262">📞 (602) 821-7262</a>
+    </span>
+  </div>
+</div>
+
+<!-- ══════════ NAV ══════════ -->
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="brand">
+        <!-- Coloca tu logo como "logo.png" en esta misma carpeta y aparecerá aquí automáticamente -->
+        <img class="logo-img" src="logo.png" alt="Xtreme Motors Exchange" onload="document.getElementById('brandFallback').style.display='none'" onerror="this.style.display='none'">
+        <span class="brand-text" id="brandFallback">
+          <span class="name">Xtreme</span>
+          <span class="tag">Motors Exchange</span>
+        </span>
+      </a>
+      <div class="nav-right">
+        <div class="lang-switch">
+          <button type="button" data-lang="es" onclick="setLang('es')">ES</button>
+          <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+        </div>
+        <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about"><span class="es">Sobre Mí</span><span class="en">About Me</span></a></li>
+          <li><a href="#inventory"><span class="es">Autos</span><span class="en">Inventory</span></a></li>
+          <li><a href="https://www.xtrememotorsexchange.com/inventory" target="_blank" rel="noopener"><span class="es">Inventario Completo ↗</span><span class="en">Full Inventory ↗</span></a></li>
+          <li><a href="#why"><span class="es">Por Qué Conmigo</span><span class="en">Why Me</span></a></li>
+          <li><a href="#contact" class="nav-cta"><span class="es">Contáctame</span><span class="en">Contact Me</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="top" style="padding:0;">
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow"><span class="es">Tu Asesor Automotriz — Phoenix, AZ</span><span class="en">Your Personal Auto Advisor — Phoenix, AZ</span></span>
+      <h1>
+        <span class="es">Hoy Te Vas Manejando Tu <span class="gold">Auto Soñado</span></span>
+        <span class="en">I'll Get You Into Your <span class="gold">Dream Car</span> Today</span>
+      </h1>
+      <p>
+        <span class="es">Soy tu línea directa a los mejores autos seminuevos de Xtreme Motors Exchange. Dime qué necesitas y cuál es tu presupuesto — yo te encuentro el auto, peleo por tu financiamiento y te atiendo personalmente desde la prueba de manejo hasta las llaves en mano.</span>
+        <span class="en">I'm your direct line to the best pre-owned vehicles at Xtreme Motors Exchange. Tell me what you need and your budget — I'll find your car, fight for your financing, and take care of you personally from test drive to keys in hand.</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-whatsapp" data-wa-es="Hola! Vi tu página y me interesa un auto" data-wa-en="Hi! I saw your page and I'm interested in a vehicle" href="https://wa.me/16028217262" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span class="es">Escríbeme por WhatsApp</span><span class="en">WhatsApp Me</span>
+        </a>
+        <a class="btn btn-outline" href="#inventory"><span class="es">Ver Autos</span><span class="en">Browse Inventory</span></a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <span class="es">Autos Inspeccionados</span><span class="en">Inspected Vehicles</span>
+        </div>
+        <div class="hero-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          <span class="es">Financiamiento Fácil</span><span class="en">Easy Financing</span>
+        </div>
+        <div class="hero-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span class="es">Trato Personal</span><span class="en">Personal Service</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TRUST STRIP ══════════ -->
+<div class="trust">
+  <div class="container">
+    <div class="trust-grid reveal">
+      <div class="trust-item"><div class="num">500+</div><div class="lbl"><span class="es">Autos Vendidos</span><span class="en">Cars Sold</span></div></div>
+      <div class="trust-item"><div class="num">10+</div><div class="lbl"><span class="es">Años de Experiencia</span><span class="en">Years of Experience</span></div></div>
+      <div class="trust-item"><div class="num">4.8★</div><div class="lbl"><span class="es">Calificación de Clientes</span><span class="en">Customer Rating</span></div></div>
+      <div class="trust-item"><div class="num">100%</div><div class="lbl"><span class="es">Tratos Honestos</span><span class="en">Honest Deals</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ABOUT ME ══════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <!-- Guarda tu foto como "me.jpg" en esta carpeta y aparecerá aquí automáticamente -->
+        <img src="me.jpg" alt="Josue Garibay — Tu Asesor Automotriz" onerror="this.style.display='none';document.getElementById('aboutAvatar').style.display='flex'">
+        <div class="about-avatar" id="aboutAvatar">JG</div>
+      </div>
+      <div class="about-text reveal">
+        <span class="kicker"><span class="es">Conoce a Tu Vendedor</span><span class="en">Meet Your Salesperson</span></span>
+        <h2>
+          <span class="es">Hola, soy <span style="color:var(--gold-light)">Josue Garibay</span> — Tu Asesor Automotriz</span>
+          <span class="en">Hi, I'm <span style="color:var(--gold-light)">Josue Garibay</span> — Your Personal Auto Advisor</span>
+        </h2>
+        <p>
+          <span class="es">Soy especialista en ventas en Xtreme Motors Exchange en Phoenix. Cuando me escribes, tratas directamente <strong>conmigo</strong> — no con un call center ni con el primer vendedor que se desocupe. Te escucho, te muestro opciones honestas dentro de tu presupuesto y te acompaño paso a paso en el financiamiento. In English or Spanish — whatever works for you.</span>
+          <span class="en">I'm a sales specialist at Xtreme Motors Exchange in Phoenix. When you message me, you deal with <strong>me personally</strong> — not a call center, not a rotating sales floor. I'll listen to what you need, show you honest options within your budget, and walk you through financing step by step. En español o en inglés, como prefieras.</span>
+        </p>
+        <ul class="about-points">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <span class="es">Un solo contacto desde el primer mensaje hasta las llaves en mano</span><span class="en">One point of contact from first message to keys in hand</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <span class="es">Respuestas claras sobre precio, financiamiento y tu auto a cuenta</span><span class="en">Straight answers on price, financing, and trade-ins</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <span class="es">Atención en español y en inglés</span><span class="en">Service in English and Spanish</span></li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-whatsapp" data-wa-es="Hola! Vi tu página y estoy buscando un auto" data-wa-en="Hi! I saw your page and I'm looking for a car" href="https://wa.me/16028217262" target="_blank" rel="noopener"><span class="es">Mándame WhatsApp</span><span class="en">Message Me on WhatsApp</span></a>
+          <a class="btn btn-outline" href="tel:+16028217262"><span class="es">Llámame — (602) 821-7262</span><span class="en">Call Me — (602) 821-7262</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ INVENTORY ══════════ -->
+<section id="inventory">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker"><span class="es">Inventario</span><span class="en">Our Inventory</span></span>
+      <h2><span class="es">Autos Seminuevos Destacados</span><span class="en">Featured Pre-Owned Vehicles</span></h2>
+      <p><span class="es">Cada auto está inspeccionado y listo para manejar. Llegan autos nuevos cada semana — pregúntame qué acaba de llegar.</span><span class="en">Every vehicle is inspected and ready to drive. New arrivals every week — ask me what just came in.</span></p>
+    </div>
+    <div class="inventory-grid">
+      <div class="car-card reveal">
+        <div class="car-img">
+          <span class="car-tag"><span class="es">Buen Precio</span><span class="en">Great Deal</span></span>
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop" alt="Sedan" loading="lazy">
+        </div>
+        <div class="car-body">
+          <h3>2019 Toyota Camry SE</h3>
+          <div class="car-specs"><span>⛽ 39 MPG</span><span>🛣️ <span class="es">62k millas</span><span class="en">62k miles</span></span><span>⚙️ <span class="es">Automático</span><span class="en">Automatic</span></span></div>
+          <div class="car-footer">
+            <span class="car-price">$17,995</span>
+            <a class="car-link" data-wa-es="Hola! Me interesa el 2019 Toyota Camry SE" data-wa-en="I'm interested in the 2019 Toyota Camry SE" href="https://wa.me/16028217262" target="_blank" rel="noopener"><span class="es">Pregúntame →</span><span class="en">Ask about it →</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="car-card reveal">
+        <div class="car-img">
+          <span class="car-tag"><span class="es">Recién Llegado</span><span class="en">Just Arrived</span></span>
+          <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=800&auto=format&fit=crop" alt="SUV" loading="lazy">
+        </div>
+        <div class="car-body">
+          <h3>2020 Honda CR-V EX</h3>
+          <div class="car-specs"><span>⛽ 30 MPG</span><span>🛣️ <span class="es">48k millas</span><span class="en">48k miles</span></span><span>⚙️ AWD</span></div>
+          <div class="car-footer">
+            <span class="car-price">$23,495</span>
+            <a class="car-link" data-wa-es="Hola! Me interesa el 2020 Honda CR-V EX" data-wa-en="I'm interested in the 2020 Honda CR-V EX" href="https://wa.me/16028217262" target="_blank" rel="noopener"><span class="es">Pregúntame →</span><span class="en">Ask about it →</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="car-card reveal">
+        <div class="car-img">
+          <span class="car-tag"><span class="es">Popular</span><span class="en">Popular</span></span>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" alt="Pickup truck" loading="lazy">
+        </div>
+        <div class="car-body">
+          <h3>2018 Ford F-150 XLT</h3>
+          <div class="car-specs"><span>⛽ 22 MPG</span><span>🛣️ <span class="es">71k millas</span><span class="en">71k miles</span></span><span>⚙️ 4x4</span></div>
+          <div class="car-footer">
+            <span class="car-price">$26,900</span>
+            <a class="car-link" data-wa-es="Hola! Me interesa la 2018 Ford F-150 XLT" data-wa-en="I'm interested in the 2018 Ford F-150 XLT" href="https://wa.me/16028217262" target="_blank" rel="noopener"><span class="es">Pregúntame →</span><span class="en">Ask about it →</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inventory-cta reveal">
+      <a class="btn btn-gold" href="https://www.xtrememotorsexchange.com/inventory" target="_blank" rel="noopener"><span class="es">Ver Inventario Completo →</span><span class="en">See Full Inventory →</span></a>
+      <p class="note"><span class="es">Explora el inventario completo y siempre actualizado en xtrememotorsexchange.com</span><span class="en">Browse our complete, always-updated inventory at xtrememotorsexchange.com</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WHY ME ══════════ -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker"><span class="es">Por Qué Comprar Conmigo</span><span class="en">Why Buy With Me</span></span>
+      <h2><span class="es">Comprar Auto No Debe Ser Estresante</span><span class="en">Buying a Car Shouldn't Be Stressful</span></h2>
+      <p><span class="es">Trato a cada cliente como familia — sin presión y sin juegos. Mi trabajo es encontrarte el auto correcto, no empujarte a uno.</span><span class="en">I treat every customer like family — no pressure, no games. My job is to find you the right car, not to push you into one.</span></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3><span class="es">Inspeccionados y Confiables</span><span class="en">Inspected &amp; Reliable</span></h3>
+        <p><span class="es">Cada auto del lote pasa por una inspección completa para que compres con total confianza.</span><span class="en">Every vehicle on our lot goes through a thorough inspection so you can buy with total confidence.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3><span class="es">Financiamiento Para Todos</span><span class="en">Financing for Everyone</span></h3>
+        <p><span class="es">Buen crédito, mal crédito o sin crédito — trabajamos con varios prestamistas para aprobarte rápido.</span><span class="en">Good credit, bad credit, no credit — we work with multiple lenders to get you approved fast.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg></div>
+        <h3><span class="es">Sin Presión</span><span class="en">No-Pressure Experience</span></h3>
+        <p><span class="es">Tómate tu tiempo, pregunta lo que quieras y haz tu prueba de manejo. Estoy para ayudarte a decidir, no para presionarte.</span><span class="en">Take your time, ask questions, and test drive. I'm here to help you decide — not to push you.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3><span class="es">Proceso Rápido y Sencillo</span><span class="en">Fast &amp; Simple Process</span></h3>
+        <p><span class="es">La mayoría de mis clientes se van manejando el mismo día. Yo me encargo del papeleo por ti.</span><span class="en">Most of my customers drive off the lot the same day. I handle the paperwork so you don't have to.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <h3><span class="es">Español e Inglés</span><span class="en">English &amp; Spanish</span></h3>
+        <p><span class="es">Te atiendo en el idioma que prefieras y te explico todo el proceso con claridad, sin letra pequeña.</span><span class="en">I'll help you in whichever language you prefer — everything explained clearly, no fine print.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3><span class="es">Recibo Tu Auto a Cuenta</span><span class="en">Trade-Ins Welcome</span></h3>
+        <p><span class="es">Trae tu auto actual y te doy una oferta justa y de mercado real para tu siguiente auto.</span><span class="en">Bring your current vehicle and I'll give you a fair, real-market offer toward your next car.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FINANCING ══════════ -->
+<section class="financing" id="financing">
+  <div class="container">
+    <div class="financing-inner reveal">
+      <span class="kicker"><span class="es">Financiamiento</span><span class="en">Financing</span></span>
+      <h2>
+        <span class="es">Aprobación en Minutos — <span style="color:var(--gold-light)">Todo Tipo de Crédito</span></span>
+        <span class="en">Get Approved in Minutes — <span style="color:var(--gold-light)">All Credit Welcome</span></span>
+      </h2>
+      <p>
+        <span class="es">No dejes que el crédito te detenga. Trabajamos con una red de prestamistas para encontrar un pago mensual que se ajuste a tu vida.</span>
+        <span class="en">Don't let credit hold you back. We work with a network of lenders to find a payment plan that fits your life.</span>
+      </p>
+      <ul class="finance-list">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <span class="es">Mal crédito y compradores primerizos bienvenidos</span><span class="en">Bad credit &amp; first-time buyers OK</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <span class="es">Enganches bajos disponibles</span><span class="en">Low down payments available</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <span class="es">Aceptamos ITIN — no necesitas seguro social</span><span class="en">ITIN accepted — no social security required</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> <span class="es">Aprobación rápida — te vas manejando el mismo día</span><span class="en">Quick approval, same-day drive-off</span></li>
+      </ul>
+      <a class="btn btn-gold" href="#contact"><span class="es">Empieza Tu Aprobación</span><span class="en">Start Your Approval</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker"><span class="es">Testimonios</span><span class="en">Testimonials</span></span>
+      <h2><span class="es">Lo Que Dicen Mis Clientes</span><span class="en">What My Customers Say</span></h2>
+      <p><span class="es">Experiencias reales de familias de Phoenix.</span><span class="en">Real experiences from real Phoenix families.</span></p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          <span class="es">"Me lo hicieron todo muy fácil. Les dije mi presupuesto y me encontraron el auto perfecto el mismo día. Cero presión — ¡muy recomendado!"</span>
+          <span class="en">"They made everything so easy. I told them my budget and they found me the perfect car the same day. No pressure at all — highly recommend!"</span>
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar">MR</div>
+          <div class="who"><strong>Maria R.</strong><span>Phoenix, AZ</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          <span class="es">"Me atendieron en español y me explicaron todo el financiamiento paso a paso. Salí manejando mi troca el mismo día. ¡Gracias!"</span>
+          <span class="en">"They helped me in Spanish and explained all the financing step by step. I drove off in my truck the same day. Thank you!"</span>
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar">JG</div>
+          <div class="who"><strong>Jorge G.</strong><span>Glendale, AZ</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>
+          <span class="es">"Gente honesta. El auto era exactamente como lo describieron, título limpio y precio justo. La mejor experiencia que he tenido comprando un auto usado."</span>
+          <span class="en">"Honest people. The car was exactly as described, clean title, fair price. Best used car buying experience I've had."</span>
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar">DT</div>
+          <div class="who"><strong>David T.</strong><span>Tempe, AZ</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h2>
+          <span class="es">Visítame o <span style="color:var(--gold-light)">Contáctame</span></span>
+          <span class="en">Visit Me or <span style="color:var(--gold-light)">Get in Touch</span></span>
+        </h2>
+        <p>
+          <span class="es">Mándame un mensaje, llámame o ven a verme al lote — como te quede mejor. Pregunta por mí.</span>
+          <span class="en">Send me a message, give me a call, or come see me at the lot — whatever works best for you. Ask for me by name.</span>
+        </p>
+        <div class="contact-methods">
+          <a class="contact-method" href="https://wa.me/16028217262" target="_blank" rel="noopener">
+            <div class="cm-icon wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div><strong>WhatsApp</strong><span><span class="es">Respuesta más rápida — normalmente en minutos</span><span class="en">Fastest response — usually within minutes</span></span></div>
+          </a>
+          <a class="contact-method" href="tel:+16028217262">
+            <div class="cm-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><strong><span class="es">Llámame</span><span class="en">Call Me</span></strong><span>(602) 821-7262</span></div>
+          </a>
+          <a class="contact-method" href="https://maps.google.com/?q=1734+E+Van+Buren+St,+Phoenix,+AZ+85006" target="_blank" rel="noopener">
+            <div class="cm-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><strong><span class="es">Visita el Lote</span><span class="en">Visit the Lot</span></strong><span>1734 E. Van Buren St., Phoenix, AZ 85006</span></div>
+          </a>
+        </div>
+        <div class="hours">
+          <h3><span class="es">Horario</span><span class="en">Business Hours</span></h3>
+          <table>
+            <tr><td><span class="es">Lunes – Viernes</span><span class="en">Monday – Friday</span></td><td>9:00 AM – 7:00 PM</td></tr>
+            <tr><td><span class="es">Sábado</span><span class="en">Saturday</span></td><td>9:00 AM – 6:00 PM</td></tr>
+            <tr><td><span class="es">Domingo</span><span class="en">Sunday</span></td><td><span class="es">Con cita</span><span class="en">By appointment</span></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" action="https://formsubmit.co/jgaribay083@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New lead from Xtreme Motors Exchange landing page">
+        <input type="hidden" name="_captcha" value="false">
+        <h3><span class="es">Dime Qué Auto Buscas</span><span class="en">Tell Me What You're Looking For</span></h3>
+        <p><span class="es">Mándame los detalles y yo personalmente te respondo rápido — normalmente el mismo día.</span><span class="en">Send me the details and I'll personally get back to you fast — usually the same day.</span></p>
+        <div class="form-row">
+          <div class="field">
+            <label for="name"><span class="es">Nombre</span><span class="en">Name</span></label>
+            <input type="text" id="name" name="name" data-ph-es="Tu nombre" data-ph-en="Your name" placeholder="Tu nombre" required>
+          </div>
+          <div class="field">
+            <label for="phone"><span class="es">Teléfono</span><span class="en">Phone</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(602) 000-0000" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email"><span class="es">Correo</span><span class="en">Email</span></label>
+          <input type="email" id="email" name="email" data-ph-es="tu@correo.com" data-ph-en="you@email.com" placeholder="tu@correo.com">
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="interest"><span class="es">Me interesa</span><span class="en">I'm interested in</span></label>
+            <select id="interest" name="interest">
+              <option data-es="Comprar un auto" data-en="Buying a car">Comprar un auto</option>
+              <option data-es="Financiamiento / aprobación" data-en="Financing / approval">Financiamiento / aprobación</option>
+              <option data-es="Dar mi auto a cuenta" data-en="Trading in my car">Dar mi auto a cuenta</option>
+              <option data-es="Otra cosa" data-en="Something else">Otra cosa</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget"><span class="es">Presupuesto</span><span class="en">Budget</span></label>
+            <select id="budget" name="budget">
+              <option data-es="Menos de $10,000" data-en="Under $10,000">Menos de $10,000</option>
+              <option data-es="$10,000 – $20,000" data-en="$10,000 – $20,000">$10,000 – $20,000</option>
+              <option data-es="$20,000 – $30,000" data-en="$20,000 – $30,000">$20,000 – $30,000</option>
+              <option data-es="$30,000+" data-en="$30,000+">$30,000+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message"><span class="es">Mensaje</span><span class="en">Message</span></label>
+          <textarea id="message" name="message" data-ph-es="ej. Busco una SUV confiable para mi familia..." data-ph-en="e.g. Looking for a reliable SUV for my family..." placeholder="ej. Busco una SUV confiable para mi familia..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold form-submit"><span class="es">Enviar Mensaje</span><span class="en">Send Message</span></button>
+        <p class="form-note"><span class="es">Respeto tu privacidad. Tu información nunca se comparte.</span><span class="en">We respect your privacy. Your information is never shared.</span></p>
+      </form>
+    </div>
+
+    <div class="map-wrap reveal">
+      <iframe
+        src="https://www.google.com/maps?q=1734+E+Van+Buren+St,+Phoenix,+AZ+85006&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Xtreme Motors Exchange location"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-text">
+          <span class="name" style="font-family:'Playfair Display',serif;font-weight:800;font-size:1.3rem;letter-spacing:0.06em;background:linear-gradient(120deg,#f5dd8a,#d4af37 45%,#8a6d1f 75%,#f0d475);-webkit-background-clip:text;background-clip:text;color:transparent;text-transform:uppercase;">Xtreme</span><br>
+          <span class="tag" style="font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:#9a9aa2;">Motors Exchange</span>
+        </span>
+        <p>
+          <span class="es">Josue Garibay — Tu Asesor Automotriz en Xtreme Motors Exchange, sirviendo con orgullo a Phoenix y el Valle. Autos de calidad, precios honestos, una persona en quien confiar.</span>
+          <span class="en">Josue Garibay — your personal auto advisor at Xtreme Motors Exchange, proudly serving Phoenix and the Valley. Quality cars, honest prices, one person you can trust.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4><span class="es">Explorar</span><span class="en">Explore</span></h4>
+        <ul>
+          <li><a href="#about"><span class="es">Sobre Mí</span><span class="en">About Me</span></a></li>
+          <li><a href="#inventory"><span class="es">Autos Destacados</span><span class="en">Featured Cars</span></a></li>
+          <li><a href="https://www.xtrememotorsexchange.com/inventory" target="_blank" rel="noopener"><span class="es">Inventario Completo</span><span class="en">Full Inventory</span></a></li>
+          <li><a href="#financing"><span class="es">Financiamiento</span><span class="en">Financing</span></a></li>
+          <li><a href="#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="es">Contacto</span><span class="en">Contact</span></h4>
+        <ul>
+          <li><a href="tel:+16028217262">(602) 821-7262</a></li>
+          <li><a href="https://wa.me/16028217262" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://maps.google.com/?q=1734+E+Van+Buren+St,+Phoenix,+AZ+85006" target="_blank" rel="noopener">1734 E. Van Buren St.<br>Phoenix, AZ 85006</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><span class="es">© 2026 Xtreme Motors Exchange. Todos los derechos reservados.</span><span class="en">© 2026 Xtreme Motors Exchange. All rights reserved.</span></span>
+      <span><span class="es">Vendedor de Autos Usados • Phoenix, Arizona</span><span class="en">Used Motor Vehicles Dealer • Phoenix, Arizona</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ FLOATING WHATSAPP ══════════ -->
+<a class="wa-float" data-wa-es="Hola! Vi tu página y me interesa un auto" data-wa-en="Hi! I saw your page and I'm interested in a vehicle" href="https://wa.me/16028217262" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="#06250f"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // ===== Language toggle (ES default) =====
+  function setLang(lang) {
+    document.body.classList.remove('es', 'en');
+    document.body.classList.add(lang);
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+
+    document.querySelectorAll('.lang-switch button').forEach(b =>
+      b.classList.toggle('active', b.dataset.lang === lang));
+
+    // Placeholders
+    document.querySelectorAll('[data-ph-es]').forEach(el =>
+      el.placeholder = lang === 'es' ? el.dataset.phEs : el.dataset.phEn);
+
+    // Select options
+    document.querySelectorAll('option[data-es]').forEach(o =>
+      o.textContent = lang === 'es' ? o.dataset.es : o.dataset.en);
+
+    // WhatsApp pre-filled messages
+    document.querySelectorAll('a[data-wa-es]').forEach(a => {
+      const msg = lang === 'es' ? a.dataset.waEs : a.dataset.waEn;
+      a.href = 'https://wa.me/16028217262?text=' + encodeURIComponent(msg);
+    });
+
+    document.title = lang === 'es'
+      ? 'Xtreme Motors Exchange | Autos Usados de Calidad en Phoenix, AZ'
+      : 'Xtreme Motors Exchange | Quality Used Cars in Phoenix, AZ';
+  }
+  let savedLang = 'es';
+  try { savedLang = localStorage.getItem('lang') || 'es'; } catch (e) {}
+  setLang(savedLang);
+
+  // ===== Reveal-on-scroll animation =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ===== Close mobile menu when a link is clicked =====
+  document.querySelectorAll('#navLinks a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+</script>
+
+</body>
+</html>
