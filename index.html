@@ -934,10 +934,7 @@
         </div>
       </div>
 
-      <form class="contact-form reveal" action="https://formsubmit.co/jgaribay083@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New lead from Xtreme Motors Exchange landing page">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://jgaribay083-maker.github.io/gracias.html">
+      <form class="contact-form reveal" id="leadForm">
         <h3><span class="es">Dime Qué Auto Buscas</span><span class="en">Tell Me What You're Looking For</span></h3>
         <p><span class="es">Mándame los detalles y yo personalmente te respondo rápido — normalmente el mismo día.</span><span class="en">Send me the details and I'll personally get back to you fast — usually the same day.</span></p>
         <div class="form-row">
@@ -978,8 +975,8 @@
           <label for="message"><span class="es">Mensaje</span><span class="en">Message</span></label>
           <textarea id="message" name="message" data-ph-es="ej. Busco una SUV confiable para mi familia..." data-ph-en="e.g. Looking for a reliable SUV for my family..." placeholder="ej. Busco una SUV confiable para mi familia..."></textarea>
         </div>
-        <button type="submit" class="btn btn-gold form-submit"><span class="es">Enviar Mensaje</span><span class="en">Send Message</span></button>
-        <p class="form-note"><span class="es">Respeto tu privacidad. Tu información nunca se comparte.</span><span class="en">We respect your privacy. Your information is never shared.</span></p>
+        <button type="submit" class="btn btn-whatsapp form-submit"><span class="es">Enviar por WhatsApp</span><span class="en">Send via WhatsApp</span></button>
+        <p class="form-note"><span class="es">Se abre tu WhatsApp con el mensaje listo — solo dale enviar. Tu información nunca se comparte.</span><span class="en">Your WhatsApp opens with the message ready — just hit send. Your information is never shared.</span></p>
       </form>
     </div>
 
@@ -1099,6 +1096,23 @@
 
   // Red de seguridad final: pase lo que pase, todo visible a los 2.5s
   setTimeout(() => revealEls.forEach(el => el.classList.add('visible')), 2500);
+
+  // ===== Formulario → WhatsApp (Pixel Guard valida antes en el mismo evento submit) =====
+  document.getElementById('leadForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const lang = document.body.classList.contains('en') ? 'en' : 'es';
+    const v = id => document.getElementById(id).value.trim();
+    const L = lang === 'es'
+      ? { hi: 'Hola Josué! Vengo de tu página 🚗', n: 'Nombre', t: 'Teléfono', c: 'Correo', i: 'Me interesa', p: 'Presupuesto', m: 'Mensaje' }
+      : { hi: 'Hi Josué! I came from your page 🚗', n: 'Name', t: 'Phone', c: 'Email', i: "I'm interested in", p: 'Budget', m: 'Message' };
+    let msg = L.hi + '\n' + L.n + ': ' + v('name') + '\n' + L.t + ': ' + v('phone');
+    if (v('email')) msg += '\n' + L.c + ': ' + v('email');
+    msg += '\n' + L.i + ': ' + document.getElementById('interest').value;
+    msg += '\n' + L.p + ': ' + document.getElementById('budget').value;
+    if (v('message')) msg += '\n' + L.m + ': ' + v('message');
+    if (window.fbq) fbq('track', 'Lead');
+    window.location.href = 'https://wa.me/16028217262?text=' + encodeURIComponent(msg);
+  });
 
   // ===== Close mobile menu when a link is clicked =====
   document.querySelectorAll('#navLinks a').forEach(a =>
