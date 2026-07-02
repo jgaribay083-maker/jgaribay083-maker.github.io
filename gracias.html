@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Mensaje Recibido! | Xtreme Motors Exchange</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0c;
+    --card: #17171d;
+    --gold: #d4af37;
+    --gold-light: #e8c96a;
+    --gold-dark: #a8862a;
+    --text: #eaeaea;
+    --muted: #9a9aa2;
+    --whatsapp: #25d366;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--black);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    line-height: 1.6;
+  }
+  body.es .en { display: none !important; }
+  body.en .es { display: none !important; }
+  .card {
+    max-width: 520px;
+    width: 100%;
+    background: var(--card);
+    border: 1px solid rgba(212,175,55,0.35);
+    border-radius: 16px;
+    padding: 48px 38px;
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+  .check {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 26px;
+  }
+  h1 { font-family: 'Playfair Display', serif; font-size: 1.9rem; margin-bottom: 14px; }
+  p { color: var(--muted); margin-bottom: 10px; }
+  .strong { color: var(--text); font-weight: 600; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-top: 24px;
+    transition: transform 0.15s, filter 0.2s;
+  }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
+  .btn-whatsapp { background: var(--whatsapp); color: #06250f; box-shadow: 0 8px 28px rgba(37,211,102,0.3); }
+  .back { display: block; margin-top: 20px; color: var(--muted); font-size: 0.88rem; text-decoration: none; }
+  .back:hover { color: var(--gold-light); }
+</style>
+</head>
+<body class="es">
+  <div class="card">
+    <div class="check">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1a1503" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h1><span class="es">¡Recibí tu mensaje!</span><span class="en">Got your message!</span></h1>
+    <p>
+      <span class="es">Gracias por escribirme. <span class="strong">Yo personalmente</span> te voy a responder lo antes posible — normalmente el mismo día.</span>
+      <span class="en">Thanks for reaching out. <span class="strong">I'll personally</span> get back to you as soon as possible — usually the same day.</span>
+    </p>
+    <p>
+      <span class="es">¿Tienes prisa? Mándame WhatsApp y te contesto en minutos.</span>
+      <span class="en">In a hurry? Message me on WhatsApp and I'll reply in minutes.</span>
+    </p>
+    <a class="btn btn-whatsapp" id="waBtn" href="https://wa.me/16028217262" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="es">Escríbeme por WhatsApp</span><span class="en">WhatsApp Me</span>
+    </a>
+    <a class="back" href="index.html"><span class="es">← Volver a la página</span><span class="en">← Back to the page</span></a>
+  </div>
+
+<script>
+  // Mismo idioma que eligió en la página principal
+  let lang = 'es';
+  try { lang = localStorage.getItem('lang') || 'es'; } catch (e) {}
+  document.body.classList.remove('es', 'en');
+  document.body.classList.add(lang);
+  document.documentElement.lang = lang;
+
+  const waMsg = lang === 'es' ? 'Hola! Acabo de mandarte el formulario de tu página' : 'Hi! I just sent you the form from your page';
+  document.getElementById('waBtn').href = 'https://wa.me/16028217262?text=' + encodeURIComponent(waMsg);
+
+  // Evento de conversión: solo dispara cuando el Meta Pixel esté instalado
+  if (window.fbq) fbq('track', 'Lead');
+</script>
+</body>
+</html>
